@@ -1,0 +1,8 @@
+target: 
+  path: './app/workers'
+  exclude_consts:
+    - 'Sidekiq::Worker' 
+against:   
+  path: './app/controllers'
+  exclude_dirs:
+    - './app/worker'
