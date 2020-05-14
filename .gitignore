@@ -6,6 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
-./deadlyzer.yml
+deadlyzer.yml
 # rspec failure tracking
 .rspec_status

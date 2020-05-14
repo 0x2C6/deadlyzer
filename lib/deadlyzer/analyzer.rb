@@ -130,10 +130,16 @@ module Deadlyzer
          tc.name if against.any? {|ac| ac.name == tc.name}
       end
       
-      constants = (used_constants + target).group_by(&:itself).transform_values(&:count)
+      constants = (used_constants + target).group_by{|c| c if c.name}.transform_values(&:count)
       constants.each do |constant, count|
-        constants_may_not_used.push constant if count < 2
+        constants_may_not_used.push constant if count < match_count
       end
+    end
+
+    # @api private
+    # @since 0.1.1
+    def match_count
+      config.min_match_count || 2
     end
 
   end
