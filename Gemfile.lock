@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    deadlyzer (0.1.0)
+    deadlyzer (0.1.1)
       coderay
       corol
       rubocop
